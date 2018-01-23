@@ -44,7 +44,7 @@ scm_prompt() {
     then
       return
     else
-      echo "[$(scm_char)$(scm_prompt_info)]"
+      echo "$(scm_char)$(scm_prompt_info)"
   fi
 }
 
@@ -70,30 +70,32 @@ function set_custom_colors() {
 }
 
 __ps_time() {
-  echo "$(clock_prompt)${normal}\n"
+  echo "$(clock_prompt)${normal}"
 }
 
 function prompt_command() {
   ps_reboot="${bright_yellow}$(show_reboot_required)${normal}\n"
 
   ps_username="$(set_user_color)\u${normal}"
-  ps_uh_separator="${dark_grey}@${normal}"
+  ps_uh_separator="${steel}@${normal}"
   ps_hostname="$(set_host_color)\h${normal}"
 
   ps_path="${dark_olive}\w${normal}"
-  ps_scm_prompt="${light_grey}$(scm_prompt)"
+  ps_scm_prompt="${light_grey}$(scm_prompt)${normal}"
 
-  ps_user_mark="${dark_grey}\n    ⚡︎ ${normal}"
+  ps_user_mark="${steel}\n    ⚡︎ ${normal}"
   ps_user_input="${normal}"
 
   # Set prompt
-  PS1="$ps_reboot$(__ps_time)$ps_username$ps_uh_separator$ps_hostname $ps_path $ps_scm_prompt$ps_user_mark$ps_user_input"
+  PS1="$ps_reboot$(__ps_time) $ps_scm_prompt\n$ps_username$ps_uh_separator$ps_hostname $ps_path $ps_user_mark$ps_user_input"
 }
 
 # Initialize custom colors
 set_custom_colors
 
+# Clock theming
 THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$dark_grey"}
+THEME_CLOCK_FORMAT="%d %B %H:%M"
 
 # scm theming
 SCM_THEME_PROMPT_PREFIX="prefix"
