@@ -83,7 +83,7 @@ function prompt_command() {
   ps_path="${dark_olive}\w${normal}"
   ps_scm_prompt="${light_grey}$(scm_prompt)"
 
-  ps_user_mark="${dark_grey}\n⚡︎ ${normal}"
+  ps_user_mark="${dark_grey}\n    ⚡︎ ${normal}"
   ps_user_input="${normal}"
 
   # Set prompt
@@ -96,8 +96,8 @@ set_custom_colors
 THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$dark_grey"}
 
 # scm theming
-SCM_THEME_PROMPT_PREFIX=""
-SCM_THEME_PROMPT_SUFFIX=""
+SCM_THEME_PROMPT_PREFIX="prefix"
+SCM_THEME_PROMPT_SUFFIX="suffix"
 
 SCM_THEME_PROMPT_DIRTY=" ${bold_red}✗${light_grey}"
 SCM_THEME_PROMPT_CLEAN=" ${green}✓${light_grey}"
