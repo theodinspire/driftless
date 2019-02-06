@@ -83,7 +83,7 @@ function prompt_command() {
   ps_path="${dark_olive}\w${normal}"
   ps_scm_prompt="${light_grey}$(scm_prompt)${normal}"
 
-  ps_user_mark="${steel}\n    ⚡︎ ${normal}"
+  ps_user_mark="${steel}\n    ▪︎ ${normal}"
   ps_user_input="${normal}"
 
   # Set prompt
