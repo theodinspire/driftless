@@ -102,8 +102,8 @@ THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$dark_grey"}
 THEME_CLOCK_FORMAT="%d %B %H:%M"
 
 # scm theming
-SCM_THEME_PROMPT_PREFIX=""
-SCM_THEME_PROMPT_SUFFIX=""
+SCM_THEME_PROMPT_PREFIX="prefix"
+SCM_THEME_PROMPT_SUFFIX="suffix"
 
 SCM_THEME_PROMPT_DIRTY=" ${bold_red}✗${light_grey}"
 SCM_THEME_PROMPT_CLEAN=" ${green}✓${light_grey}"
