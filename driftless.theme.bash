@@ -11,7 +11,7 @@ fi
 function show_reboot_required() {
   if [ ! -z "$_bf_prompt_reboot_info" ]; then
     if [ -f /var/run/reboot-required ]; then
-      printf "Reboot required!"
+      printf "Reboot required!\n"
     fi
   fi
 }
@@ -44,7 +44,7 @@ scm_prompt() {
     then
       return
     else
-      echo "$(scm_char)$(scm_prompt_info)"
+      echo "$CHAR$(scm_prompt_info)"
   fi
 }
 
@@ -88,6 +88,10 @@ function prompt_command() {
 
   # Set prompt
   PS1="$ps_reboot$(__ps_time) $ps_scm_prompt\n$ps_username$ps_uh_separator$ps_hostname $ps_path $ps_user_mark$ps_user_input"
+
+  ## 01 February 23:45 ±<branch> ↑1 ↓4 U:1 ✗
+  ## <user>@<machine> ~
+  ##    ⚡︎
 }
 
 # Initialize custom colors
