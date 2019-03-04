@@ -73,6 +73,15 @@ __ps_time() {
   echo "$(clock_prompt)${normal}"
 }
 
+function prompt_marker() {
+  if [[ "$OSTYPE" == "darwin"* ]]
+    then
+      echo "⚡︎"
+    else
+      echo "\$"
+  fi
+}
+
 function prompt_command() {
   ps_reboot="${bright_yellow}$(show_reboot_required)${normal}\n"
 
@@ -83,7 +92,7 @@ function prompt_command() {
   ps_path="${dark_olive}\w${normal}"
   ps_scm_prompt="${light_grey}$(scm_prompt)${normal}"
 
-  ps_user_mark="${steel}\n    ▪︎ ${normal}"
+  ps_user_mark="${steel}\n    $(prompt_marker) ${normal}"
   ps_user_input="${normal}"
 
   # Set prompt
