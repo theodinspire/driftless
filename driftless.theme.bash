@@ -95,10 +95,8 @@ function prompt_command() {
   ps_path="${dark_olive}\w${normal}"
   ps_scm_prompt="${light_grey}$(scm_prompt)${normal}"
 
-  ps_user_mark="${steel}\n    $(prompt_marker) ${normal}"
+  ps_user_mark="${steel}\n    \[$(tput sc)\]⚡︎\[$(tput rc)$(tput cuf 2)\]${normal}"
   ps_user_input="${normal}"
-
-  ps_prompt="\[$(tput )\]"
 
   # Set prompt
   PS1="$ps_reboot$(__ps_time) $ps_scm_prompt\n$ps_username$ps_uh_separator$ps_hostname $ps_path $ps_user_mark$ps_user_input"
