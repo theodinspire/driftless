@@ -55,9 +55,6 @@ function set_custom_colors() {
   dark_grey="\[$(tput setaf 8)\]"
   light_grey="\[$(tput setaf 248)\]"
 
-  light_orange="\[$(tput setaf 172)\]"
-  lime_yellow="\[$(tput setaf 190)\]"
-
   powder_blue="\[$(tput setaf 153)\]"
   bright_yellow="\[$(tput setaf 226)\]"
 
