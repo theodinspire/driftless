@@ -73,17 +73,20 @@ __ps_time() {
   echo "$(clock_prompt)${normal}"
 }
 
+# Define the prompt marker
+# macOS does fine with the high voltage sign
+# It may cause spacing issues in other OSes
 function prompt_marker() {
   if [[ "$OSTYPE" == "darwin"* ]]
     then
       echo "⚡︎"
     else
-      echo "\$"
+      echo "\$ "
   fi
 }
 
 function prompt_command() {
-  ps_reboot="${bright_yellow}$(show_reboot_required)${normal}\n"
+  ps_reboot="${bright_yellow}$(show_reboot_required)\n${normal}"
 
   ps_username="$(set_user_color)\u${normal}"
   ps_uh_separator="${steel}@${normal}"
@@ -94,6 +97,8 @@ function prompt_command() {
 
   ps_user_mark="${steel}\n    $(prompt_marker) ${normal}"
   ps_user_input="${normal}"
+
+  ps_prompt="\[$(tput )\]"
 
   # Set prompt
   PS1="$ps_reboot$(__ps_time) $ps_scm_prompt\n$ps_username$ps_uh_separator$ps_hostname $ps_path $ps_user_mark$ps_user_input"
