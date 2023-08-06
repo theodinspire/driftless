@@ -33,7 +33,7 @@
           "properties": {
             "branch_icon": ""
           },
-          "template": "±({{ .HEAD }}) {{ .BranchStatus }} {{ if gt .Ahead 0 }}↑{{ .Ahead }} {{ end }}{{ if gt .Behind 0 }}↓{{ .Behind }} {{ end }}{{ if .Working.Changed }}{{ .Working.String }} {{ end }}"
+          "template": "±({{ .HEAD }}) {{ if gt .Ahead 0 }} ↑{{ .Ahead }} {{ end }}{{ if gt .Behind 0 }}↓{{ .Behind }} {{ end }}{{ if .Working.Changed }}{{ .Working.String }} {{ end }}"
         }
       ]
     },
